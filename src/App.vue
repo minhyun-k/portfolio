@@ -1,7 +1,13 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <nav class="header">
+    <h2 class="Portfolio">Portfolio</h2>
+    <router-link to="/" class="menu">ABOUT</router-link> 
+    <span class="menuLine">|</span>
+    <router-link to="/project" class="menu">PROJECT</router-link>
+    <button class="icon git" style="background-image: url('/git.svg');"></button>
+    <button class="icon vercel" style="background-image: url('/vercel.png');"></button>
+    <button class="icon resume" style="background-image: url('/resume-50.png');"></button>
+    <button class="icon top" style="background-image: url('/top-black.png');"></button>
   </nav>
   <router-view/>
 </template>
@@ -11,20 +17,81 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #333;
   text-align: center;
-  color: #2c3e50;
+  margin: 0;
+  padding: 0;
 }
 
 nav {
-  padding: 30px;
+  padding: 60px;
+  padding-bottom: 80px;
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #333;
+    text-decoration: none;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #333;
+      font-weight: bold;
+      border: 1px solid #ddd;
+      padding: 4px;
+      border-radius: 8px;
     }
   }
+}
+li {
+  list-style: none;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+.Portfolio{
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px 0 120px;
+}
+.menu{
+  font-size: 20px;
+  font-weight: 400;
+}
+.menuLine{
+  font-size: 20px;
+  padding: 0 28px;
+  
+}
+// icon
+.icon{
+  width: 45px;
+  height: 45px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+  left: 3%;
+  transform: translateX(-3%);
+  background-position: center;
+  cursor: pointer;
+}
+.resume{
+  top: 72%;
+  transform: translateY(-72%);
+  background-size: 90%;
+}
+.git{
+  top: 78%;
+  transform: translateY(-78%);
+}
+.vercel{
+  top: 84%;
+  transform: translateY(-84%);
+  background-size: 60%;
+}
+.top{
+  top: 90%;
+  transform: translateY(-90%);
+  background-size: 80%;
 }
 </style>
