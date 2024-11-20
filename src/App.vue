@@ -4,14 +4,38 @@
     <router-link to="/" class="menu">ABOUT</router-link> 
     <span class="menuLine">|</span>
     <router-link to="/project" class="menu">PROJECT</router-link>
-    <button class="icon git" style="background-image: url('/git.svg');"></button>
-    <button class="icon vercel" style="background-image: url('/vercel.png');"></button>
-    <button class="icon resume" style="background-image: url('/resume-50.png');"></button>
-    <button class="icon top" style="background-image: url('/top-black.png');"></button>
+    <button class="icon git" style="background-image: url('/git.svg');" @click="git()"></button>
+    <button class="icon vercel" style="background-image: url('/vercel.png');" @click="vercel()"></button>
+    <button class="icon resume" style="background-image: url('/resume-50.png');" @click="downloadPdf()" ></button>
+    <button class="icon top" style="background-image: url('/top-black.png');" @click="gotop()"></button>
   </nav>
   <router-view/>
 </template>
+<script>
+export default{
+  name:'App',
+  methods: {
+    vercel: function(){
+      window.open("https:////vercel.com/minhyun-ks-projects");
+    },
+    git: function(){
+      window.open("https://github.com/minhyun-k/minhyun-k");
+    },
+    downloadPdf(){
+      const filePath = '/resume.pdf'
 
+
+      const link = document.createElement('a');
+      link.href = filePath;
+      link.download = 'resume_강민현.pdf';
+      link.click();
+    },
+    gotop(){
+      window.scrollTo({top: 0, behavior:'smooth'})
+    }
+  }
+}
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -35,9 +59,8 @@ nav {
     &.router-link-exact-active {
       color: #333;
       font-weight: bold;
-      border: 1px solid #ddd;
       padding: 4px;
-      border-radius: 8px;
+      transition: .5s;
     }
   }
 }
@@ -56,6 +79,7 @@ p{
 .menu{
   font-size: 20px;
   font-weight: 400;
+  transition: .5s;
 }
 .menuLine{
   font-size: 20px;

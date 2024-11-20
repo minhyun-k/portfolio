@@ -53,13 +53,13 @@
     <div class="skills">
       <h1 class="title">SKILLS<span class="title_line2"></span></h1>
       <div class="list">
-        <div class="skill_title">
+        <div class="skill_title" @click="s_act(1)" :class="{ active: isActive==1 }">
           <p class="s_t">#HTML5</p>
           <p class="s_t">#CSS3</p>
           <p class="s_t">#SASS</p>
           <p class="s_t">#FIGMA</p>
         </div>
-        <ul class="skill_txt">
+        <ul class="skill_txt"  :class="{ active: isActive==1 }">
           <li class="s_txt">
             웹 페이지의 기본 구조를 정의하며, 효율적인 마크업을 통해 접근성을 고려한 HTML 설계를 할 수 있습니다.</li>
           <li class="s_txt">
@@ -69,11 +69,11 @@
         </ul>
       </div>
       <div class="list">
-        <div class="skill_title">
+        <div class="skill_title" @click="s_act(2)" :class="{ active: isActive==2 }">
           <p class="s_t">#JavaScript</p>
           <p class="s_t">#TypeScript</p>
         </div>
-        <ul class="skill_txt">
+        <ul class="skill_txt" :class="{ active: isActive==2 }">
           <li class="s_txt">
             웹 애플리케이션에 동적인 기능을 추가하며, 다양한 JavaScript 문법을 통해 효율적이고 확장성 있는 코드를 작성할 수 있습니다.</li>
           <li class="s_txt">
@@ -83,12 +83,12 @@
         </ul>
       </div>
       <div class="list">
-        <div class="skill_title">
+        <div class="skill_title" @click="s_act(3)" :class="{ active: isActive==3 }">
           <p class="s_t">#REACT</p>
           <p class="s_t">#NEXT.js</p>
           <p class="s_t">#VUE.js</p>
         </div>
-        <ul class="skill_txt">
+        <ul class="skill_txt" :class="{ active: isActive==3 }">
           <li class="s_txt">
             합리적인 방식으로 컴포넌트를 분리하여 컴포넌트의 재사용성을 높입니다. Hooks를 활용한 상태 관리, Zustand, Redux, Context API를 통한 전역 상태 관리, 효율적인 가상 DOM 활용으로 성능을 최적화합니다. 
           </li>
@@ -101,11 +101,11 @@
         </ul>
       </div>
       <div class="list">
-        <div class="skill_title">
+        <div class="skill_title" @click="s_act(4)" :class="{ active: isActive==4 }">
           <p class="s_t">#Firebase</p>
           <p class="s_t">#Express</p>
         </div>
-        <ul class="skill_txt">
+        <ul class="skill_txt" :class="{ active: isActive==4 }">
           <li class="s_txt">
             express.json() 같은 기본 미들웨어와 함께 morgan 등 추가 미들웨어를 활용해 요청, 인증, 오류 처리 등을 관리할 수 있으며, 다양한 URL패턴을 처리하는 유연한 라우팅 시스템을 통해 클라이언트 요청을 쉽게 처리하고, 모듈화를 통해 코드 유지보수를 향상시키려 노력합니다. 
           </li>
@@ -115,11 +115,11 @@
         </ul>
       </div>
       <div class="list">
-        <div class="skill_title">
+        <div class="skill_title" @click="s_act(5)" :class="{ active: isActive==5 }">
           <p class="s_t">#Github</p>
           <p class="s_t">#Vercel</p>
         </div>
-        <ul class="skill_txt">
+        <ul class="skill_txt" :class="{ active: isActive==5 }">
           <li class="s_txt">
             협업과 버전 관리를 위한 중요한 도구로서, 브렌치 전략을 통한 코드 관리, Pull Request를 통한 코드 리뷰 등 Git 명령어와 워크플로우를 통해 프로젝트를 체계적으로 관리할 수 있습니다.
           </li>
@@ -154,6 +154,7 @@
     </div>
   </div>
 </template>
+
 <style scoped lang="scss">
   .banner{
     background-color: rgba(0, 0, 0, .02);
@@ -293,6 +294,12 @@
           left: 98%;
           transform: translateX(-100%);
         }
+        &.active::after{
+          content: url(/public/up.svg);
+          position: absolute;
+          left: 98%;
+          transform: translateX(-100%);
+        }
         .s_t{
           font-size: 18px;
           font-weight: bold;
@@ -302,7 +309,12 @@
         background-color: rgba(0, 0, 0, .03);
         padding: 44px;
         margin: 0;
-        // display: none;
+        display: none;
+        transition: .3s;
+        &.active{
+          display: block;
+          transition: .3s;
+        }
         .s_txt{
           list-style-type: square;
           font-size: 16px;
@@ -314,7 +326,7 @@
   }
   .education{
     border-top: 3px solid #111;
-    padding: 40px 40px 120px;
+    padding: 40px 0 120px;
     max-width: 1200px;
     display: flex;
     align-items: center;
@@ -324,17 +336,17 @@
     .edu1{
       position: absolute;
       top: 20%;
-      left: 10%;
+      left: 5%;
     }
     .edu2{
       position: absolute;
       top: 20%;
-      left: 35%;
+      left: 31%;
     }
     .edu3{
       position: absolute;
       top: 20%;
-      left: 80%;
+      left: 85%;
     }
     .cal{
       font-size: 24px;
@@ -351,18 +363,20 @@
 </style>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+import { defineComponent } from 'vue'
 // import data from "../assets/data.json"
 
-
-@Options({
-  props: {
-    msg: String
+export default defineComponent({
+  data(){
+    return {isActive:1}
+  },
+  methods: {
+    s_act(num: number) : void{
+      this.isActive = num;
+    }
   }
+
 })
-export default class HelloWorld extends Vue {
-  msg!: string
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
