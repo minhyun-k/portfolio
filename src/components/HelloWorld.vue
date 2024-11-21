@@ -133,12 +133,12 @@
     <h1 class="title">EDUCATION<span class="title_line3"></span></h1>
 
     <div class="education">
-      <div class="edu1">
+      <div class="edu">
         <p class="cal">2017.03 ~ 2023.08</p>
         <p class="where">단국대학교</p>
         <p class="what">상담학과&경영학과</p>
       </div>
-      <div class="edu2">
+      <div class="edu">
         <p class="cal">2024.05~2024.11</p>
         <p class="where">그린컴퓨터아카데미</p>
         <p class="what">
@@ -146,7 +146,7 @@
           SW개발자 양성과정
         </p>
       </div>
-      <div class="edu3">
+      <div class="edu">
         <p class="cal">2024.12~</p>
         <p class="where">OOO 입사</p>
         <p class="what"></p>
@@ -156,11 +156,16 @@
 </template>
 
 <style scoped lang="scss">
+  @import "../assets/scss/res.scss";
+
   .banner{
     background-color: rgba(0, 0, 0, .02);
     text-align: center;
     padding: 80px;
     margin: 0;
+    @include res('mobile'){
+      padding: 40px;
+    }
     .intro{
       .intro_title{
         font-size: 28px;
@@ -169,12 +174,22 @@
         font-weight: 500;
         text-underline-offset: 5px;
         margin: 0;
+        @include res('mobile'){
+          font-size: 20px;
+          line-height: 30px;
+          padding-bottom: 20px;
+        }
       }
       .intro_txt{
         margin: 0 auto;
         font-size: 18px;
         line-height: 36px;
         max-width: 600px;
+        @include res('mobile'){
+          font-size: 16px;
+          line-height: 24px;
+          word-break: keep-all;
+        }
       }
     }
     .profile{
@@ -209,6 +224,9 @@
     font-weight: 500;
     // text-decoration: line-through solid #333333 1px ;
     position: relative;
+    @include res('mobile'){
+          margin: 60px 0 20px;
+        }
   }
   .title_line{
     display: inline-block;
@@ -246,6 +264,13 @@
     justify-content: center;
     gap: 24px;
     margin-bottom: 80px;
+    @include res('tablet'){
+          flex-wrap: wrap;
+    }
+    @include res('mobile'){
+          flex-wrap: wrap;
+          margin: 0 20px;
+    }
     .interview_box{
       border: 1px solid rgba(0, 0, 0, .2);
       border-radius: 16px;
@@ -258,11 +283,25 @@
         background-color: #111;
         text-decoration-line: center;
         margin: 24px;
+        @include res('tablet'){
+          font-size: 16px;
+        }
+        @include res('mobile'){
+          font-size: 16px;
+        }
       }
       .itxt{
         font-size: 16px;
         line-height: 36px;
         padding: 0 24px;
+        @include res('tablet'){
+          font-size: 14px;
+          text-align: left;
+        }
+        @include res('mobile'){
+          font-size: 14px;
+          text-align: left;
+        }
       }
       .interview_txt1{
         margin-bottom: 20px;
@@ -277,6 +316,9 @@
     background-color: rgba(0, 0, 0, .02);    
     padding: 10px 80px 80px;
     text-align: center;
+    @include res('mobile'){
+      padding: 10px 20px 40px;
+    }
     .list{
       max-width: 1200px;
       text-align: left;
@@ -303,6 +345,9 @@
         .s_t{
           font-size: 18px;
           font-weight: bold;
+          @include res('mobile'){
+            font-size: 14px;
+          }
         }
       }
       .skill_txt{
@@ -320,6 +365,10 @@
           font-size: 16px;
           line-height: 32px;
           margin-bottom: 20px;
+          @include res('mobile'){
+            font-size: 14px;
+            line-height: 24px;
+          }
         }
       }
     }
@@ -333,31 +382,47 @@
     justify-content: space-around;
     position: relative;
     margin: 0 auto 120px;
-    .edu1{
-      position: absolute;
-      top: 20%;
-      left: 5%;
+    @include res('mobile'){
+      margin: 40px 20px 120px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      display: block;
     }
-    .edu2{
-      position: absolute;
-      top: 20%;
-      left: 31%;
-    }
-    .edu3{
-      position: absolute;
-      top: 20%;
-      left: 85%;
+    .edu{
+      width: 33.33%;
+      @include res('mobile'){
+        width: 100%;
+        padding-bottom: 40px;
+      }
     }
     .cal{
       font-size: 24px;
       font-weight: bold;
+      @include res('tablet'){
+          font-size: 16px;
+        }
+      @include res('mobile'){
+          font-size: 16px;
+        }
     }
     .where{
       font-size: 16px;
       font-size: 500;
+      @include res('tablet'){
+          font-size: 14px;
+        }
+      @include res('mobile'){
+          font-size: 14px;
+        }
     }
     .what{
       font-size: 16px;
+      @include res('tablet'){
+          font-size: 14px;
+        }
+      @include res('mobile'){
+          font-size: 14px;
+        }
     }
   }
 </style>

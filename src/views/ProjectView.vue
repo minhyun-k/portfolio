@@ -1,5 +1,5 @@
 <template>
-  <div class="project">
+  <div class="project ">
     <ul class="project_list">
       <li class="project_content">
           <img class="thumb" src="/ieum_thumb.png" alt="ieum">
@@ -146,7 +146,7 @@ methods: {
 </script>
 
 <style lang="scss">
-
+  @import "../assets/scss/res.scss";
 
 
 
@@ -160,42 +160,79 @@ methods: {
         margin: 40px auto;
         display: flex;
         justify-content: center;
+        @include res('tablet'){
+          display: block;
+        }
+        @include res('mobile'){
+          display: block;
+        }
 
         .thumb{
           width: 590px;
           height: 510px;
           object-fit: cover;
+          @include res('mobile'){
+            width: 300px;
+            height: 400px;
+          }
         }
         .txt{
           max-height: 510px;
-          max-width: 500px;
+          width: 500px;
           text-align: left;
           margin-left: 60px;
           position: relative;
+          @include res('tablet'){
+            width: 590px;
+            margin: 0 auto;
+            padding-bottom: 60px;
+          }
+          @include res('mobile'){
+            width: 300px;
+            margin: 0 auto;
+            padding-bottom: 60px;
+          }
           .type{
             font-size: 16px;
             margin: 20px 0 32px;
             font-weight: bold;
-
+            @include res('tablet'){
+              margin-bottom: 20px;
+            }
+            @include res('mobile'){
+              margin-bottom: 20px;
+            }
           }
           .title{
             font-size: 48px;
             font-weight: bolder;
             margin: 0;
             padding-bottom: 8px;
+            @include res('mobile'){
+              font-size: 36px;
+            }
           }
           .skill{
             font-size: 16px;
             word-spacing: 20px;
             margin-bottom: 52px;
+            @include res('tablet'){
+              margin-bottom: 32px;
+            }
+            @include res('mobile'){
+              margin-bottom: 32px;
+            }
           }
-          .cal1{
+          .cal{
             font-size: 16px;
             font-weight: bold;
           }
           .desc{
             font-size: 16px;
             color: #555555;
+            @include res('mobile'){
+              font-size: 14px;
+            }
           }
           .git{
             top: 100%;
@@ -209,6 +246,12 @@ methods: {
             top: 100%;
             left: 25%;
             transform: translate(25%,-100%);
+            @include res('mobile'){
+              top: 100%;
+              left: 32%;
+              transform: translate(32%, -100%);
+              padding: 10px 37.71px;
+            }
           }
 
           button{
@@ -220,6 +263,9 @@ methods: {
             background-color: #fff;
             position: absolute;
             cursor: pointer;
+            @include res('mobile'){
+              padding: 10px 30px;
+            }
           }
         }
       }
@@ -237,42 +283,80 @@ methods: {
           display: flex;
           justify-content: center;
           position: relative;
+          @include res('tablet'){
+            align-items: center;
+            flex-direction: column-reverse;
+          }
+          @include res('mobile'){
+            align-items: center;
+            flex-direction: column-reverse;
+          }
           .thumb{
             width: 590px;
             height: 510px;
             object-fit: cover;
-            margin-top: 110px;
+            @include res('mobile'){
+              width: 300px;
+              height: 400px;
+            }
           }
           .txt{
           max-height: 510px;
-          max-width: 500px;
+          width: 500px;
           text-align: left;
           margin-right: 60px;
           position: relative;
+          @include res('tablet'){
+              width: 590px;
+              padding-bottom: 60px;
+              margin: 0 auto;
+            }
+          @include res('mobile'){
+              width: 300px;
+              padding-bottom: 60px;
+              margin: 0 auto;
+            }
           .type{
             font-size: 16px;
             margin: 20px 0 32px;
             font-weight: bold;
-
+            @include res('tablet'){
+              margin-bottom: 20px;
+            }
+            @include res('mobile'){
+              margin-bottom: 20px;
+            }
           }
           .title{
             font-size: 48px;
             font-weight: bolder;
             margin: 0;
             padding-bottom: 8px;
+            @include res('mobile'){
+              font-size: 36px;
+            }
           }
           .skill{
             font-size: 16px;
             word-spacing: 20px;
             margin-bottom: 52px;
+            @include res('tablet'){
+              margin-bottom: 32px;
+            }
+            @include res('mobile'){
+              margin-bottom: 32px;
+            }
           }
-          .cal1{
+          .cal{
             font-size: 16px;
             font-weight: bold;
           }
           .desc{
             font-size: 16px;
             color: #555555;
+            @include res('mobile'){
+              font-size: 14px;
+            }
           }
           .git{
             top: 100%;
@@ -286,6 +370,12 @@ methods: {
             top: 100%;
             left: 25%;
             transform: translate(25%,-100%);
+            @include res('mobile'){
+              padding: 10px 37.71px;
+              top: 100%;
+              left: 32%;
+              transform: translate(32%, -100%);
+            }
           }
 
           button{
@@ -297,6 +387,9 @@ methods: {
             background-color: #fff;
             position: absolute;
             cursor: pointer;
+            @include res('mobile'){
+              padding: 10px 30px;
+            }
           }
         }
         }
