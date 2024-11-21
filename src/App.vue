@@ -1,15 +1,18 @@
 <template>
   <nav class="header">
     <h2 class="Portfolio">Portfolio</h2>
-    <router-link to="/" class="menu">ABOUT</router-link> 
+  </nav>
+  <div class="sticky" :class="{'backColor' : !topBtn}">
+    <router-link to="/" class="menu">ABOUT</router-link>
     <span class="menuLine">|</span>
     <router-link to="/project" class="menu">PROJECT</router-link>
+  </div>
+  <div class="icon_box">
     <button class="icon git" style="background-image: url('/git.svg');" @click="git()"></button>
-    <button class="icon vercel" style="background-image: url('/vercel.png');" @click="vercel()"></button>
     <button class="icon resume" style="background-image: url('/resume-50.png');" @click="downloadPdf()" ></button>
     <button class="icon top" style="background-image: url('/top-black.png');" @click="gotop()"></button>
-    <FooterComponent/>
-  </nav>
+  </div>
+  <FooterComponent/>
   <router-view/>
 </template>
 <script>
@@ -21,7 +24,28 @@ export default{
   components:{
     FooterComponent,
   },
+  data(){
+        return {
+            topBtn: true,
+            lastScrollPosition: 0
+        }
+    },
+  mounted(){
+      window.addEventListener('scroll', this.onScroll)
+  },
+  beforeUnmount() {
+      window.removeEventListener('scroll', this.onScroll)
+  },
   methods: {
+    onScroll(){
+      const currentScrollPosition = window.scrollY || document.documentElement.scrollTop
+
+      if(currentScrollPosition < 0){
+          return
+      }
+      this.topBtn = currentScrollPosition < 340
+      this.lastScrollPosition = currentScrollPosition
+    },
     vercel: function(){
       window.open("https:////vercel.com/minhyun-ks-projects");
     },
@@ -45,33 +69,63 @@ export default{
 </script>
 <style lang="scss">
   @import "./assets/scss/res.scss";
-
+body{margin: 0;}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #333;
   text-align: center;
+  height: 3300px;
   margin: 0;
   padding: 0;
+  word-break: keep-all;
+  @include res('tablet'){
+      height: 5959px;
+    }
+  @include res('mobile'){
+      height: 5600px;
+    }
 }
 
 nav {
   padding: 60px;
   padding-bottom: 80px;
-
-  a {
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-
-    &.router-link-exact-active {
-      color: #333;
-      font-weight: bold;
-      padding: 4px;
-      transition: .5s;
-    }
+}
+.sticky{
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  padding: 20px 0;
+  transition: .2s;
+  &.backColor{
+    background-color: rgba(0, 0, 0, .2);
+    transition: .5s;
   }
+.menu{
+  font-size: 20px;
+  font-weight: 400;
+  transition: .5s;
+}
+.menuLine{
+  font-size: 20px;
+  padding: 0 28px;
+}
+a {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+
+  &.router-link-exact-active {
+    color: #333;
+    font-weight: bold;
+    padding: 4px;
+    transition: .5s;
+  }
+}
+}
+ul{
+  padding: 0;
 }
 li {
   list-style: none;
@@ -88,53 +142,40 @@ p{
       margin: 20px 0 60px;
     }
 }
-.menu{
-  font-size: 20px;
-  font-weight: 400;
-  transition: .5s;
-}
-.menuLine{
-  font-size: 20px;
-  padding: 0 28px;
-  
-}
 // icon
-.icon{
+.icon_box{
   z-index: 999;
-  width: 45px;
-  height: 45px;
-  border: 1px solid #ddd;
-  border-radius: 100%;
-  background-repeat: no-repeat;
   position: fixed;
   left: 3%;
+  bottom: 5%;
   transform: translateX(-3%);
-  background-position: center;
-  cursor: pointer;
-  @include res('tablet'){
-      display: none;
-    }
-  @include res('mobile'){
-      display: none;
-    }
-}
-.resume{
-  top: 72%;
-  transform: translateY(-72%);
-  background-size: 90%;
-}
-.git{
-  top: 78%;
-  transform: translateY(-78%);
-}
-.vercel{
-  top: 84%;
-  transform: translateY(-84%);
-  background-size: 60%;
-}
-.top{
-  top: 90%;
-  transform: translateY(-90%);
-  background-size: 80%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .icon{
+    width: 45px;
+    height: 45px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    @include res('tablet'){
+        display: none;
+      }
+    @include res('mobile'){
+        display: none;
+      }
+  }
+  .resume{
+    background-size: 90%;
+  }
+  .git{
+  }
+  .top{
+    background-size: 80%;
+  }
 }
 </style>

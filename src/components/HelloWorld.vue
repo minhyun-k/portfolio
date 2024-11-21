@@ -169,7 +169,7 @@
     .intro{
       .intro_title{
         font-size: 28px;
-        line-height: 60px;      
+        line-height: 40px;      
         text-decoration-line: underline;
         font-weight: 500;
         text-underline-offset: 5px;
@@ -181,9 +181,10 @@
         }
       }
       .intro_txt{
+        padding-top: 20px;
+        line-height: 28px;
         margin: 0 auto;
         font-size: 18px;
-        line-height: 36px;
         max-width: 600px;
         @include res('mobile'){
           font-size: 16px;
@@ -292,7 +293,7 @@
       }
       .itxt{
         font-size: 16px;
-        line-height: 36px;
+        line-height: 28px;
         padding: 0 24px;
         @include res('tablet'){
           font-size: 14px;
@@ -364,7 +365,6 @@
           list-style-type: square;
           font-size: 16px;
           line-height: 32px;
-          margin-bottom: 20px;
           @include res('mobile'){
             font-size: 14px;
             line-height: 24px;

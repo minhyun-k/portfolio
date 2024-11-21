@@ -1,12 +1,8 @@
 <template >
     <div class="footer" :class="{'hidden' : !showFooter}">
-        <ul class="menu">
+        <ul class="f_menu">
             <li class="menu_list">
                 <button class=" f_icon f_git" style="background-image: url('/git.svg');" @click="git()">
-                </button>
-            </li>
-            <li class="menu_list">
-                <button class="f_icon f_vercel" style="background-image: url('/vercel.png');" @click="vercel()">
                 </button>
             </li>
             <li class="menu_list">
@@ -80,17 +76,18 @@ export default defineComponent({
         display: block;
         background-color: #fff;
         margin: 0 auto;
-        padding: 20px 0;
+        padding: 10px 0;
         position: fixed;
         width: 100%;
-        top: 100%;
-        left: 50%;
-        transform: translate(-50%, -100%);
+        bottom: 0;
+        left: 0;
         border-top: 1px solid #555;
+        transition: 0.5s;
         &.hidden{
-            top: 150%;
+            bottom: -20%;
+            transition: 0.7s;
         }
-        .menu{
+        .f_menu{
             margin: 0;
             display: flex;
             align-items: center;
@@ -101,16 +98,12 @@ export default defineComponent({
                 .f_icon{
                     background-color: #fff;
                     border: none;
-                    width: 40px;
-                    height: 40px;
+                    width: 30px;
+                    height: 30px;
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
                 }
-                .f_git{}
-                .f_vercel{}
-                .f_resume{}
-                .f_top{}
             }
         }
     }
@@ -121,19 +114,18 @@ export default defineComponent({
         display: block;
         background-color: #fff;
         margin: 0 auto;
-        padding: 20px 0;
+        padding: 10px 0;
         position: fixed;
         width: 100%;
-        top: 100%;
-        left: 50%;
-        transform: translate(-50%, -100%);
+        bottom: 0;
+        left: 0;
         border-top: 1px solid #555;
         transition: 0.5s;
         &.hidden{
-            top: 120%;
+            bottom: -20%;
             transition: 0.7s;
         }
-        .menu{
+        .f_menu{
             margin: 0;
             display: flex;
             align-items: center;
@@ -144,16 +136,12 @@ export default defineComponent({
                 .f_icon{
                     background-color: #fff;
                     border: none;
-                    width: 40px;
-                    height: 40px;
+                    width: 30px;
+                    height: 30px;
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
                 }
-                .f_git{}
-                .f_vercel{}
-                .f_resume{}
-                .f_top{}
             }
         }
     }
