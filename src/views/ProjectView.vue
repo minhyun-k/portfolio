@@ -71,10 +71,10 @@
           <p class="skill">#Vue.js #Scss</p>
             <p class="cal">2024.11.18~</p>
             <p class="desc">
-              이 포트폴리오는 제가 개발한 다양한 웹 애플리케이션을 소개하는 공간입니다. Vue.js를 사용하여 만들었습니다. 반응형 디자인을 통해 모든 디바이스에서 원활하게 작동하게 만들었습니다.
+              이 포트폴리오는 제가 Vue.js를 이용하여 개발한 다양한 웹 애플리케이션을 소개하는 공간입니다. 반응형 디자인을 통해 모든 디바이스에서 원활하게 작동하게 만들었습니다.
               <br/>
               <br/>
-              각 프로젝트는 사용자가 필요로 하는 정보를 직관적으로 제공하고, 성능과 확장성을 고려한 코드로 구성되었습니다. 제 포트폴리오는 웹 개발자로서의 경험과 역량을 잘 보여주는 작품들입니다.
+              각 프로젝트는 사용자가 필요로 하는 정보를 직관적으로 제공하고, 성능과 확장성을 고려한 코드로 구성되었습니다. 제 포트폴리오는 프론 트엔드 개발자로서의 경험과 역량을 보여주는 작품들입니다.
             </p>
             <button @click="git('github.com/minhyun-k/portfolio.git')" class="git" >Github</button>
             <button @click="vercel('portfolio-peach-eight-19.vercel.app')" class="view">View</button>
@@ -117,8 +117,8 @@
               <br/>
               <br/>
               Vue.js와 Express를 활용해 기능을 구현했으며,
-                API와의 통합으로, 빠르게 업데이트되는 뉴스 콘텐츠를 사용자에게 제공하여 시의성을 유지하며,
-                이 프로젝트는 API 통합, 데이터 페칭, 그리고 효율적인 상태 관리를 통해 실시간 데이터를 다루는 것을 중점으로 진행했습니다.
+              API와의 통합으로, 빠르게 업데이트되는 뉴스 콘텐츠를 사용자에게 제공하여 시의성을 유지하며,
+              이 프로젝트는 API 통합, 데이터 페칭, 그리고 효율적인 상태 관리를 통해 실시간 데이터를 다루는 것을 중점으로 진행했습니다.
             </p>
             <button @click="git('github.com/minhyun-k/News.git')" class="git" >Github</button>
             <button @click="vercel('apinews-virid.vercel.app')" class="view">View</button>

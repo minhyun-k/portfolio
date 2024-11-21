@@ -2,7 +2,7 @@
   <div>
     <div class="banner">
       <div class="intro">
-        <h2 class="intro_title">안녕하세요<br/>저는 웹 개발자 강민현입니다.</h2>
+        <h2 class="intro_title">안녕하세요<br/>저는 프론트 엔드 개발자 강민현입니다.</h2>
         <p class="intro_txt">
           끝이 없는 배움은 새로운 것을 맞이하는 즐거움이라고 생각합니다.<br/>
           즐겁게 지나온 저의 발자국을 소개하겠습니다.<br/>
