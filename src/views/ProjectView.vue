@@ -79,7 +79,7 @@
             <button @click="git('github.com/minhyun-k/portfolio.git')" class="git" >Github</button>
             <button @click="vercel('portfolio-peach-eight-19.vercel.app')" class="view">View</button>
         </div>
-          <div class="thumb_box">
+          <div class="thumb_box th_line">
             <img class="thumb" src="/portfolio.png" alt="portfolio">
           </div>
         </div>
@@ -105,7 +105,7 @@
             <button @click="vercel('todos-drab-delta.vercel.app')" class="view">View</button>
         </div>
       </li>
-      <li class="project_content_r">
+      <!-- <li class="project_content_r">
         <div class="project_content_box">
           <div class="txt">
           <p class="type">Personal</p>
@@ -127,7 +127,7 @@
             <img class="thumb" src="/news__thumb.jpg" alt="news">
           </div>
         </div>
-      </li>
+      </li> -->
     </ul>
   </div>
 </template>
@@ -396,7 +396,9 @@ methods: {
       }
     }
   }
-
+  .th_line{
+    border: 1px solid #ddd;
+  }
 
 
   
