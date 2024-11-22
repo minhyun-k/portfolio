@@ -1,12 +1,10 @@
 <template>
-  <nav class="header">
-    <h2 class="Portfolio">Portfolio</h2>
-  </nav>
-  <div class="sticky" :class="{'backColor' : !topBtn}">
+  <h2 class="Portfolio">MinHyun's PORTFOLIO</h2>
+  <nav class="sticky" :class="{'backColor' : !topBtn}">
     <router-link to="/" class="menu">ABOUT</router-link>
     <span class="menuLine">|</span>
     <router-link to="/project" class="menu">PROJECT</router-link>
-  </div>
+  </nav>
   <div class="icon_box">
     <button class="icon git" style="background-image: url('/git.svg');" @click="git()"></button>
     <button class="icon resume" style="background-image: url('/resume-50.png');" @click="downloadPdf()" ></button>
@@ -81,16 +79,14 @@ body{margin: 0;}
   padding: 0;
   word-break: keep-all;
   @include res('tablet'){
-      height: 5959px;
+      height: 3400px;
     }
   @include res('mobile'){
-      height: 5600px;
+      height: 3500px;
     }
 }
 
 nav {
-  padding: 60px;
-  padding-bottom: 80px;
 }
 .sticky{
   z-index: 999;
@@ -137,7 +133,7 @@ p{
 .Portfolio{
   font-size: 40px;
   font-weight: bold;
-  margin: 20px 0 120px;
+  margin: 80px 0 170px;
   @include res('mobile'){
       margin: 20px 0 60px;
     }

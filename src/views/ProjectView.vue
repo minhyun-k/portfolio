@@ -60,7 +60,7 @@
               React 프레임워크를 사용하였으며, 이 프로젝트는 외부 영화 API와의 통합을 통해 실시간으로 업데이트되는 영화 정보를 제공하며, 다양한 필터와 정렬 옵션으로 사용자가 관심 있는 영화 정보를 쉽게 찾을 수 있도록 합니다. 데이터 시각화와 인터페이스 설계를 통해 사용자 참여를 유도하고, API 데이터를 효율적으로 관리하는 역량을 보여주는 프로젝트입니다.
             </p>
             <button @click="git('github.com/minhyun-k/movie.git')" class="git" >Github</button>
-            <button @click="vercel('vercel.com/minhyun-ks-projects/movie')" class="view">View</button>
+            <button @click="vercel('movie-blond-alpha.vercel.app/')" class="view">View</button>
         </div>
       </li>
       <li class="project_content_r">
