@@ -105,29 +105,6 @@
             <button @click="vercel('todos-drab-delta.vercel.app')" class="view">View</button>
         </div>
       </li>
-      <!-- <li class="project_content_r">
-        <div class="project_content_box">
-          <div class="txt">
-          <p class="type">Personal</p>
-          <h2 class="title">API-NEWS</h2>
-          <p class="skill">#Vue.js #Scss #express #Axios(딥서치api)</p>
-            <p class="cal">2024.10.21~2024.10.25</p>
-            <p class="desc">
-              API News는 실시간 뉴스 API를 활용해 최신 뉴스 콘텐츠를 제공하는 웹 애플리케이션입니다. 사용자는 원하는 주제의 뉴스를 손쉽게 탐색할 수 있으며, 다양한 카테고리와 키워드를 통해 관심 있는 기사를 쉽게 찾을 수 있습니다.
-              <br/>
-              <br/>
-              Vue.js와 Express를 활용해 기능을 구현했으며,
-              API와의 통합으로, 빠르게 업데이트되는 뉴스 콘텐츠를 사용자에게 제공하여 시의성을 유지하며,
-              이 프로젝트는 API 통합, 데이터 페칭, 그리고 효율적인 상태 관리를 통해 실시간 데이터를 다루는 것을 중점으로 진행했습니다.
-            </p>
-            <button @click="git('github.com/minhyun-k/News.git')" class="git" >Github</button>
-            <button @click="vercel('apinews-virid.vercel.app')" class="view">View</button>
-        </div>
-          <div class="thumb_box">
-            <img class="thumb" src="/news__thumb.jpg" alt="news">
-          </div>
-        </div>
-      </li> -->
     </ul>
   </div>
 </template>
@@ -155,6 +132,7 @@ methods: {
     text-align: inherit;
     .project_list{
       padding: 0;
+      margin-bottom: 120px;
       .project_content{
         max-width: 1200px;
         margin: 40px auto;
@@ -225,7 +203,7 @@ methods: {
           }
           .cal{
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 500;
           }
           .desc{
             font-size: 16px;

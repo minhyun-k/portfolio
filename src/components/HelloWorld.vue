@@ -17,7 +17,7 @@
       </div>
     </div>
     
-    <h1 class="title">INTERVIEW<span class="title_line"></span></h1>
+    <h2 class="title">INTERVIEW<span class="title_line"></span></h2>
 
     <div class="interview">
       <div class="interview_box">
@@ -51,15 +51,15 @@
     </div>
 
     <div class="skills">
-      <h1 class="title">SKILLS<span class="title_line2"></span></h1>
-      <div class="list">
-        <div class="skill_title" @click="s_act(1)" :class="{ active: isActive==1 }">
-          <p class="s_t">#HTML5</p>
-          <p class="s_t">#CSS3</p>
-          <p class="s_t">#SASS</p>
-          <p class="s_t">#FIGMA</p>
-        </div>
-        <ul class="skill_txt"  :class="{ active: isActive==1 }">
+      <h2 class="title">SKILLS<span class="title_line2"></span></h2>
+      <div class="skill_box" :class="{ active: isActive==1 }">
+        <ul class="skill_title" @click="s_act(1)">
+          <li class="s_t">#HTML5</li>
+          <li class="s_t">#CSS3</li>
+          <li class="s_t">#SASS</li>
+          <li class="s_t">#FIGMA</li>
+        </ul>
+        <ul class="skill_txt">
           <li class="s_txt">
             웹 페이지의 기본 구조를 정의하며, 효율적인 마크업을 통해 접근성을 고려한 HTML 설계를 할 수 있습니다.</li>
           <li class="s_txt">
@@ -68,12 +68,12 @@
           <li class="s_txt">웹 표준을 지키고 웹 접근성을 높이려고 노력합니다.</li>
         </ul>
       </div>
-      <div class="list">
-        <div class="skill_title" @click="s_act(2)" :class="{ active: isActive==2 }">
-          <p class="s_t">#JavaScript</p>
-          <p class="s_t">#TypeScript</p>
-        </div>
-        <ul class="skill_txt" :class="{ active: isActive==2 }">
+      <div class="skill_box" :class="{ active: isActive==2 }">
+        <ul class="skill_title" @click="s_act(2)">
+          <li class="s_t">#JavaScript</li>
+          <li class="s_t">#TypeScript</li>
+        </ul>
+        <ul class="skill_txt">
           <li class="s_txt">
             웹 애플리케이션에 동적인 기능을 추가하며, 다양한 JavaScript 문법을 통해 효율적이고 확장성 있는 코드를 작성할 수 있습니다.</li>
           <li class="s_txt">
@@ -82,13 +82,13 @@
             TypeScript를 이용하여 JavaScript에 정적 타입을 부여해 코드의 안정성과 가독성을 높이며, 대규모 애플리케이션 개발 시 유지보수가 용이하도록 합니다.</li>
         </ul>
       </div>
-      <div class="list">
-        <div class="skill_title" @click="s_act(3)" :class="{ active: isActive==3 }">
-          <p class="s_t">#REACT</p>
-          <p class="s_t">#NEXT.js</p>
-          <p class="s_t">#VUE.js</p>
-        </div>
-        <ul class="skill_txt" :class="{ active: isActive==3 }">
+      <div class="skill_box" :class="{ active: isActive==3 }">
+        <ul class="skill_title" @click="s_act(3)">
+          <li class="s_t">#REACT</li>
+          <li class="s_t">#NEXT.js</li>
+          <li class="s_t">#VUE.js</li>
+        </ul>
+        <ul class="skill_txt">
           <li class="s_txt">
             합리적인 방식으로 컴포넌트를 분리하여 컴포넌트의 재사용성을 높입니다. Hooks를 활용한 상태 관리, Zustand, Redux, Context API를 통한 전역 상태 관리, 효율적인 가상 DOM 활용으로 성능을 최적화합니다. 
           </li>
@@ -100,12 +100,12 @@
           </li>
         </ul>
       </div>
-      <div class="list">
-        <div class="skill_title" @click="s_act(4)" :class="{ active: isActive==4 }">
-          <p class="s_t">#Firebase</p>
-          <p class="s_t">#Express</p>
-        </div>
-        <ul class="skill_txt" :class="{ active: isActive==4 }">
+      <div class="skill_box" :class="{ active: isActive==4 }">
+        <ul class="skill_title" @click="s_act(4)">
+          <li class="s_t">#Firebase</li>
+          <li class="s_t">#Express</li>
+        </ul>
+        <ul class="skill_txt">
           <li class="s_txt">
             express.json() 같은 기본 미들웨어와 함께 morgan 등 추가 미들웨어를 활용해 요청, 인증, 오류 처리 등을 관리할 수 있으며, 다양한 URL패턴을 처리하는 유연한 라우팅 시스템을 통해 클라이언트 요청을 쉽게 처리하고, 모듈화를 통해 코드 유지보수를 향상시키려 노력합니다. 
           </li>
@@ -114,12 +114,12 @@
           </li>
         </ul>
       </div>
-      <div class="list">
-        <div class="skill_title" @click="s_act(5)" :class="{ active: isActive==5 }">
-          <p class="s_t">#Github</p>
-          <p class="s_t">#Vercel</p>
-        </div>
-        <ul class="skill_txt" :class="{ active: isActive==5 }">
+      <div class="skill_box" :class="{ active: isActive==5 }">
+        <ul class="skill_title" @click="s_act(5)">
+          <li class="s_t">#Github</li>
+          <li class="s_t">#Vercel</li>
+        </ul>
+        <ul class="skill_txt">
           <li class="s_txt">
             협업과 버전 관리를 위한 중요한 도구로서, 브렌치 전략을 통한 코드 관리, Pull Request를 통한 코드 리뷰 등 Git 명령어와 워크플로우를 통해 프로젝트를 체계적으로 관리할 수 있습니다.
           </li>
@@ -130,7 +130,7 @@
       </div>
     </div>
 
-    <h1 class="title">EDUCATION<span class="title_line3"></span></h1>
+    <h2 class="title">EDUCATION<span class="title_line3"></span></h2>
 
     <div class="education">
       <div class="edu">
@@ -320,25 +320,21 @@
     @include res('mobile'){
       padding: 10px 20px 40px;
     }
-    .list{
+    .skill_box{
       max-width: 1200px;
       text-align: left;
       margin: 0 auto;
       .skill_title{
+        margin: 0;
         border-top: 1px solid black;
         display: flex;
         align-items: center;
         gap: 20px;
         padding: 24px;
         position: relative;
+        cursor: pointer;
         &::after{
           content: url(/public/down.svg);
-          position: absolute;
-          left: 98%;
-          transform: translateX(-100%);
-        }
-        &.active::after{
-          content: url(/public/up.svg);
           position: absolute;
           left: 98%;
           transform: translateX(-100%);
@@ -351,16 +347,22 @@
           }
         }
       }
+      &.active .skill_title::after{
+          content: url(/public/up.svg);
+          position: absolute;
+          left: 98%;
+          transform: translateX(-100%);
+        }
+      &.active .skill_txt{
+        display: block;
+        transition: .3s;
+      }
       .skill_txt{
         background-color: rgba(0, 0, 0, .03);
         padding: 44px;
         margin: 0;
         display: none;
         transition: .3s;
-        &.active{
-          display: block;
-          transition: .3s;
-        }
         .s_txt{
           list-style-type: square;
           font-size: 16px;
@@ -381,18 +383,18 @@
     align-items: center;
     justify-content: space-around;
     position: relative;
-    margin: 0 auto 120px;
+    margin: 0 auto 40px;
     @include res('mobile'){
-      margin: 40px 20px 120px;
+      margin: 40px 20px 80px;
       border: 1px solid #ddd;
-      padding: 10px;
+      padding: 10px 20px 20px;
       display: block;
     }
     .edu{
       width: 33.33%;
       @include res('mobile'){
         width: 100%;
-        padding-bottom: 40px;
+        padding-bottom: 0;
       }
     }
     .cal{
@@ -403,6 +405,7 @@
         }
       @include res('mobile'){
           font-size: 16px;
+          margin-top: 10px;
         }
     }
     .where{

@@ -74,16 +74,9 @@ body{margin: 0;}
   -moz-osx-font-smoothing: grayscale;
   color: #333;
   text-align: center;
-  height: 3300px;
   margin: 0;
   padding: 0;
   word-break: keep-all;
-  @include res('tablet'){
-      height: 3400px;
-    }
-  @include res('mobile'){
-      height: 3500px;
-    }
 }
 
 nav {
@@ -97,6 +90,16 @@ nav {
   &.backColor{
     background-color: rgba(0, 0, 0, .2);
     transition: .5s;
+    &.backColor:before{
+      content: '';
+      z-index: -1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(10px);
+      top: 0;
+      left: 0;
+    }
   }
 .menu{
   font-size: 20px;
